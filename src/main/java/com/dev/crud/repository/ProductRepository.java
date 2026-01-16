@@ -1,6 +1,6 @@
-package com.dev.crud.app_crud.repository;
+package com.dev.crud.repository;
 
-import com.dev.crud.app_crud.model.Product;
+import com.dev.crud.model.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

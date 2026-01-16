@@ -1,8 +1,9 @@
-package com.dev.crud.app_crud.service;
+package com.dev.crud.service;
 
-import com.dev.crud.app_crud.model.Product;
-import com.dev.crud.app_crud.dto.ProductRequestDTO;
-import com.dev.crud.app_crud.repository.ProductRepository;
+import com.dev.crud.model.Product;
+import com.dev.crud.dto.ProductRequestDTO;
+import com.dev.crud.exception.ProductNotFoundException;
+import com.dev.crud.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -27,7 +28,7 @@ public class ProductService {
 
     public Product update(Long id, ProductRequestDTO dto) {
         Product product = repository.findById(id)
-            .orElseThrow(() -> new RuntimeException("Produto não localizado com id: " + id));
+            .orElseThrow(() -> new ProductNotFoundException(id));
         
         product.setName(dto.name());
         product.setPrice(dto.price());
@@ -37,7 +38,7 @@ public class ProductService {
 
     public void delete(Long id) {
         Product product = repository.findById(id)
-            .orElseThrow(() -> new RuntimeException("Deleção não realizara. Produto não encontrato com id: " + id));
+            .orElseThrow(() -> new ProductNotFoundException(id));
         
         repository.delete(product);
     }

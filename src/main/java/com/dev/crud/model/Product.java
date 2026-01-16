@@ -1,4 +1,4 @@
-package com.dev.crud.app_crud.model;
+package com.dev.crud.model;
 
 import jakarta.persistence.*;
 import lombok.*;

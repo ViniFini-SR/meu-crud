@@ -1,4 +1,4 @@
-package com.dev.crud.app_crud.dto;
+package com.dev.crud.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Positive;

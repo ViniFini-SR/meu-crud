@@ -1,8 +1,8 @@
-package com.dev.crud.app_crud.controller;
+package com.dev.crud.controller;
 
-import com.dev.crud.app_crud.model.Product;
-import com.dev.crud.app_crud.dto.ProductRequestDTO;
-import com.dev.crud.app_crud.service.ProductService;
+import com.dev.crud.model.Product;
+import com.dev.crud.dto.ProductRequestDTO;
+import com.dev.crud.service.ProductService;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
