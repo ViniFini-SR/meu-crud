@@ -36,5 +36,19 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
     }
 
+    @ExceptionHandler(org.springframework.web.bind.MethodArgumentNotValidException.class)
+    public ResponseEntity<ErrorResponse> handleValidation (org.springframework.web.bind.MethodArgumentNotValidException ex, HttpServletRequest request) {
+
+        String errorMessage = ex.getBindingResult().getAllErrors().get(0).getDefaultMessage();
+
+        ErrorResponse error = new ErrorResponse(
+            HttpStatus.BAD_REQUEST.value(),
+            errorMessage,
+            LocalDateTime.now(),
+            request.getRequestURI()
+        );
+
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
+    }
 
 }

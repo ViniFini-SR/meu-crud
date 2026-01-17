@@ -6,6 +6,7 @@
     "customizations": {
         "vscode": {
             "extensions": [
+                "google.geminicodeassist",
                 "vscjava.vscode-java-pack",
                 "vmware.vscode-spring-boot-dashboard",
                 "vscjava.vscode-spring-boot-tools",
